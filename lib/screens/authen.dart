@@ -18,8 +18,19 @@ class _AuthenState extends State<Authen> {
     return Image.asset('images/logo.png');
   }
 
-  Widget showTextFiled() {
+  Widget showUser() {
     // return TextField()
+    return TextFormField(
+      decoration:
+          InputDecoration(labelText: 'UserName :', hintText: 'Your username'),
+    );
+  }
+
+  Widget showPassword() {
+    return TextFormField(
+      decoration:
+          InputDecoration(labelText: 'Pasword', hintText: 'Your Password'),
+    );
   }
 
   @override
@@ -31,9 +42,18 @@ class _AuthenState extends State<Authen> {
       child: Column(
         children: <Widget>[
           showLogo(),
-          Container(margin: EdgeInsets.only(top: 15.0),
+          Container(
+            margin: EdgeInsets.only(top: 15.0),
             child: showTitle(),
           ),
+           Container(
+            margin: EdgeInsets.only(left: 35.0, right: 20.0),
+            child: showUser(),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 35.0, right: 20.0),
+            child: showPassword(),
+          )
         ],
       ),
     ));
