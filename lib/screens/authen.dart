@@ -49,9 +49,11 @@ class _AuthenState extends State<Authen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(resizeToAvoidBottomPadding: false,
         body: Container(
-      margin: EdgeInsets.only(top: 70.0),
+      decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [Colors.red[500], Colors.white,],begin: Alignment(-1, -1))),
+      padding: EdgeInsets.only(top: 70.0),
       alignment: Alignment(0, -1),
       child: Column(
         children: <Widget>[
@@ -75,7 +77,9 @@ class _AuthenState extends State<Authen> {
                 Expanded(
                   child: showSignin(),
                 ),
-                Expanded(child: showSignUp(),)
+                Expanded(
+                  child: showSignUp(),
+                )
               ],
             ),
           )
