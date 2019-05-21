@@ -55,6 +55,7 @@ class _AuthenState extends State<Authen> {
             child: showPassword(),
           )
         ],
+        
       ),
     ));
   }
