@@ -40,7 +40,7 @@ class _AuthenState extends State<Authen> {
     );
   }
 
-  Widget showSignin() {
+  Widget showSignin()  {
     return RaisedButton(
       child: Text('ตกลง'),
       onPressed: () {},
