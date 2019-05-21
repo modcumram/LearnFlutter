@@ -52,7 +52,7 @@ class _AuthenState extends State<Authen> {
     return Scaffold(resizeToAvoidBottomPadding: false,
         body: Container(
       decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [Colors.red[500], Colors.white,],begin: Alignment(-1, -1))),
+          gradient: LinearGradient(colors: [Colors.blue[800], Colors.white,],begin: Alignment(-1, -1))),
       padding: EdgeInsets.only(top: 70.0),
       alignment: Alignment(0, -1),
       child: Column(
