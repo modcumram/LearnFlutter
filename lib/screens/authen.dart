@@ -22,14 +22,28 @@ class _AuthenState extends State<Authen> {
     // return TextField()
     return TextFormField(
       decoration:
-          InputDecoration(labelText: 'UserName :', hintText: 'Your username'),
+          InputDecoration(labelText: 'ชื่อผู้ใช้ :', hintText: 'Your username'),
     );
   }
 
   Widget showPassword() {
     return TextFormField(
       decoration:
-          InputDecoration(labelText: 'Pasword', hintText: 'Your Password'),
+          InputDecoration(labelText: 'รหัสผ่าน', hintText: 'Your Password'),
+    );
+  }
+
+  Widget showSignUp() {
+    return RaisedButton(
+      child: Text('สมัคร'),
+      onPressed: () {},
+    );
+  }
+
+  Widget showSignin() {
+    return RaisedButton(
+      child: Text('ตกลง'),
+      onPressed: () {},
     );
   }
 
@@ -46,16 +60,26 @@ class _AuthenState extends State<Authen> {
             margin: EdgeInsets.only(top: 15.0),
             child: showTitle(),
           ),
-           Container(
+          Container(
             margin: EdgeInsets.only(left: 35.0, right: 20.0),
             child: showUser(),
           ),
           Container(
             margin: EdgeInsets.only(left: 35.0, right: 20.0),
             child: showPassword(),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 50.0, right: 50.0),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: showSignin(),
+                ),
+                Expanded(child: showSignUp(),)
+              ],
+            ),
           )
         ],
-        
       ),
     ));
   }
