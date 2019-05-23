@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test1/screens/register.dart';
 
 class Authen extends StatefulWidget {
   @override
@@ -33,14 +34,21 @@ class _AuthenState extends State<Authen> {
     );
   }
 
-  Widget showSignUp() {
+  Widget showSignUp(BuildContext context) {
     return RaisedButton(
       child: Text('สมัคร'),
-      onPressed: () {},
+      onPressed: () {
+        print('You Click Signup');
+
+        //Create Router
+        var registerRoute =
+            MaterialPageRoute(builder: (BuildContext context) => Register());
+            Navigator.of(context).push(registerRoute);
+      },
     );
   }
 
-  Widget showSignin()  {
+  Widget showSignin() {
     return RaisedButton(
       child: Text('ตกลง'),
       onPressed: () {},
@@ -49,42 +57,46 @@ class _AuthenState extends State<Authen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(resizeToAvoidBottomPadding: false,
+    return Scaffold(
+        resizeToAvoidBottomPadding: false,
         body: Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [Colors.blue[800], Colors.white,],begin: Alignment(-1, -1))),
-      padding: EdgeInsets.only(top: 70.0),
-      alignment: Alignment(0, -1),
-      child: Column(
-        children: <Widget>[
-          showLogo(),
-          Container(
-            margin: EdgeInsets.only(top: 15.0),
-            child: showTitle(),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 35.0, right: 20.0),
-            child: showUser(),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 35.0, right: 20.0),
-            child: showPassword(),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 50.0, right: 50.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: showSignin(),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            Colors.blue[800],
+            Colors.white,
+          ], begin: Alignment(-1, -1))),
+          padding: EdgeInsets.only(top: 70.0),
+          alignment: Alignment(0, -1),
+          child: Column(
+            children: <Widget>[
+              showLogo(),
+              Container(
+                margin: EdgeInsets.only(top: 15.0),
+                child: showTitle(),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 35.0, right: 20.0),
+                child: showUser(),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 35.0, right: 20.0),
+                child: showPassword(),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 50.0, right: 50.0),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: showSignin(),
+                    ),
+                    Expanded(
+                      child: showSignUp(context),
+                    )
+                  ],
                 ),
-                Expanded(
-                  child: showSignUp(),
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-    ));
+              )
+            ],
+          ),
+        ));
   }
 }
